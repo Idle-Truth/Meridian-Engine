@@ -30,7 +30,23 @@ elseif (UNIX)
 endif()
 
 # Add the executable
-add_executable(Meridian main.cpp)
+add_executable(Meridian main.cpp
+        Shader.h
+        Shader.cpp
+        GraphicsShader.h
+        GraphicsShader.cpp
+        PipelineConfig.cpp
+        PipelineConfig.h
+        GraphicsPipeline.cpp
+        GraphicsPipeline.h
+        Vertex.h
+        Uniform.h
+)
+
+add_custom_command(TARGET Meridian POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/shaders $<TARGET_FILE_DIR:Meridian>/shaders)
+
 
 # Link libraries: GLFW and Vulkan
 target_link_libraries(Meridian
