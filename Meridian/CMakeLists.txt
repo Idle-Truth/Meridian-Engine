@@ -41,6 +41,8 @@ add_executable(Meridian main.cpp
         GraphicsPipeline.h
         Vertex.h
         Uniform.h
+        Mesh.h
+        Mesh.cpp
 )
 
 add_custom_command(TARGET Meridian POST_BUILD

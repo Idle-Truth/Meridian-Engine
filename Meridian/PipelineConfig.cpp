@@ -32,8 +32,8 @@ PipelineConfig PipelineConfig::defaultConfig(VkExtent2D extent) {
     config.rasterizer.rasterizerDiscardEnable = VK_FALSE;
     config.rasterizer.polygonMode = VK_POLYGON_MODE_FILL;
     config.rasterizer.lineWidth = 1.0f;
-    config.rasterizer.cullMode = VK_CULL_MODE_BACK_BIT;
-    config.rasterizer.frontFace = VK_FRONT_FACE_CLOCKWISE;
+    config.rasterizer.cullMode = VK_CULL_MODE_NONE;
+    config.rasterizer.frontFace = VK_FRONT_FACE_COUNTER_CLOCKWISE;
     config.rasterizer.depthBiasEnable = VK_FALSE;
 
     config.multisampling.sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
